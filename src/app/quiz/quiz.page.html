@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <h2 style="float: left; width: 50%;">
+        Einzelquiz
+      </h2>
+      <p style="float: right; width: 50%">Punkte: {{quiz.points}}</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="countdownDiv">
+    <ng-container *ngFor="let count of countVariable">
+        <div *ngIf="count" class="timeDiv">
+
+        </div>
+    </ng-container>
+  </div>
+  <ng-container *ngIf="!displayLastPart">
+      <div *ngFor="let quizQuestion of quiz.questions">
+          <div *ngIf="quizQuestion.visible">
+              <ion-card-header>
+                  <ion-card-title>{{quizQuestion.question}}</ion-card-title>
+              </ion-card-header>
+
+              
+            <button *ngFor="let answer of quizQuestion.answers" class="ripple buttonStd" (click)="onAnswer(answer)"
+             [ngClass]="{'buttonCorrect': answer.answeredCorrectly === true,
+                          'buttonWrong': answer.answeredCorrectly === false}">
+              <ion-card-content  color="primary" >
+                  {{answer.answerText}}
+                </ion-card-content>
+              </button>
+          </div>
+        </div>
+  </ng-container>
+ 
+  <ng-container *ngIf="displayLastPart">
+    <h1 style="margin-bottom: 10pt; margin-left: 5pt;text-align: center;">Gratulation zu {{quiz.points}} Punkten!</h1>
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg> 
+    
+    <ion-button expand="block" (ionBlur)="onBack()">Weiter</ion-button>
+  </ng-container>
+</ion-content>

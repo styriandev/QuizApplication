@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-subtitle>Hallo Heli</ion-card-subtitle>
+        <ion-card-title>Du schlägst dich wirklich gut!</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        
+        <ngx-charts-gauge [results]="chartData" [view]="chartSize" units="Σ" bigSegments="5" showText="false"  showAxis="false">
+
+        </ngx-charts-gauge>
+      </ion-card-content>
+    </ion-card>
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>So hast du dich geschlagen</ion-label>
+      </ion-list-header>
+
+      
+      <button (click)="onSaveQuiz()">Save quiz</button>
+
+      <ion-item color="secondary">
+        <ion-icon name="logo-game-controller-b"></ion-icon>
+        <ion-label>10 absolvierte Duelle</ion-label>
+      </ion-item>
+      <ion-item  color="tertiary">
+        <ion-icon name="happy"></ion-icon>
+        <ion-label>5 gewonnen!</ion-label>
+      </ion-item>
+      <ion-item color="secondary">
+        <ion-icon name="car"></ion-icon>
+        <ion-label>Nächstes Level in 20 Punkten</ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>

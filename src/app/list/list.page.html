@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Quiz spielen
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item style="margin-top: 10pt; margin-right: 5pt; margin-left: 5pt;" href="javascript:;" (click)="buttonClick()" color="secondary">
+    <ion-icon name="people" style="color: black;"></ion-icon>
+    <ion-label style="color: black;">
+      Spiele mit einem Kollegen
+    </ion-label>
+  </ion-item>
+
+  <ion-item style="margin-top: 10pt; margin-right: 5pt; margin-left: 5pt;" href="javascript:;" (click)="singleQuiz()" color="tertiary">
+    <ion-icon name="person" style="color: black;"></ion-icon>
+    <ion-label style="color: black;">
+      Spiele ein Einzelquiz
+    </ion-label>
+  </ion-item>
+
+  <ion-item style="margin-top: 10pt; margin-right: 5pt; margin-left: 5pt;" href="javascript:;" (click)="buttonClick()" color="secondary">
+    <ion-label style="color: black;">
+      <img src="assets/icon/videogame.png" style="float:left">
+      <h3 style="float:left">Sepp hat dich zum Duell herausgefordert!</h3>
+      <h4 style="float:left">Klicke um loszuspielen</h4>
+
+    </ion-label>
+  </ion-item>
+</ion-content>
