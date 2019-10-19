@@ -9,6 +9,7 @@ export class Quiz {
 }
 
 export class Question {
+    creator: string;
     visible: boolean;
     answers: Answer[];
     timeForQuestion: number;
